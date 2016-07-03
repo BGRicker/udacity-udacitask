@@ -1,7 +1,7 @@
 class TodoList
     attr_accessor :title, :list
 
-    def initialize
+    def initialize(title)
       @list = []
       @title = title
     end
@@ -21,9 +21,14 @@ class TodoList
 end
 
 class Item
-  attr_accessor :task
+  attr_accessor :task, :complete
   
-  def initialize(task)
+  def initialize(task, complete = false)
     @task = task
+    @complete = complete
+  end
+
+  def complete
+    @complete = true
   end
 end
