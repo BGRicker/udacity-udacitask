@@ -4,25 +4,29 @@ require_relative 'todolist.rb'
 todo = TodoList.new
 
 # Add four new items
-todo.add_item "eat pizza"
-todo.add_item "drink coffee"
-todo.add_item "watch movie"
-todo.add_item "go to sleep"
+pizza = Item.new("eat pizza")
+coffee = Item.new("drink coffee")
+movie = Item.new("watch movie")
+sleep = Item.new("go to sleep")
+todo.add_item pizza
+todo.add_item coffee
+todo.add_item movie
+todo.add_item sleep
 
 # Print the list
-print todo.list
+# print todo.list
 
 # Delete the first item
-todo.remove_item("eat pizza")
+todo.remove_item(pizza)
 
 # Print the list
-print todo.list
+puts todo.print_list
 
 # Delete the second item
-todo.remove_item("watch movie")
+todo.remove_item(movie)
 
 # Print the list
-print todo.list
+puts todo.print_list
 
 # Update the completion status of the first item to complete
 
