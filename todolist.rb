@@ -48,6 +48,36 @@ class TodoList
     end
   end
 
+  def completed_tasks
+    list.select{|task| task.completed? }
+  end
+
+  def incomplete_tasks
+    list.select{|task| task.completed? == false }
+  end
+
+  def show_tasks(tasks)
+    tasks.each do |i|
+      puts "\t - #{i.task}"
+    end
+  end
+
+  def split_view
+    puts title
+    puts "-"*10
+    puts "Completed Tasks: #{completed_tasks.count}"
+    show_tasks(completed_tasks)
+    puts
+    puts "Incomplete Tasks: #{incomplete_tasks.count}"
+    show_tasks(incomplete_tasks)
+  end
+
+  def magic_complete(string)
+    list.select{|list| list.task == string}.each do |i|
+      i.complete
+    end
+  end
+
 end
 
 class Item

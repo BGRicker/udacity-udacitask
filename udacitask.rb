@@ -51,3 +51,13 @@ cool_list.print_list
 
 cool_list.show
 
+# Magic Complete
+# Complete just by typing the name of your task, no need to reference the object
+cool_list.magic_complete("go to the store")
+
+# Split View
+# split up tasks into two lists: complete and incomplete
+cool_list.magic_complete("go to the store")
+cool_list.split_view
+
+

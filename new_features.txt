@@ -1,0 +1,51 @@
+New Features 😎
+
+=================================================================================
+=================================================================================
+
+Feature 1: Magic List
+- This method, used to quickly add items to to-do lists, will take a whole
+string, separated by commas, and add them to a previous TodoList object:
+
+cool_list = TodoList.new("A cool list")
+cool_list.magic_list("go to the store, buy a pizza, cook the pizza, eat the
+pizza")
+
+After creating a TodoList, you can call .magic_list on that new TodoList. You
+pass in a string to magic_list, and that string creates multiple todo items at a
+time split up by commas. Above we have "to go the store, buy a pizza, cook the
+pizza, eat the pizza," so we can expect four items in the todo list:
+
+cool_list.print_list # this will output this:
+
+A cool list
+----------
+go to the store
+buy a pizza
+cook the pizza
+eat the pizza
+
+=================================================================================
+=================================================================================
+
+Feature 2: Split View
+- This is a different way of displaying your tasks, first showing completed
+tasks and then the incomplete tasks. Calling this method on a list will show
+this output:
+
+A cool list
+----------
+Completed Tasks: 1
+         - go to the store
+
+Incomplete Tasks: 3
+         - buy a pizza
+         - cook the pizza
+         - eat the pizza
+
+First the count of Completed tasks are shown, then the tasks themselves. The
+same is done for the incompleted tasks afterward.
+
+=================================================================================
+=================================================================================
+
