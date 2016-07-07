@@ -15,23 +15,21 @@ class TodoList
     @title = title
   end
 
-  # def add_item(new_item)
-  #   item = Item.new(new_item)
-  #   @items.push(item)
-  # end
-
   def remove_item(item)
     @list.delete(item)
   end
 
-  def list
-    @list.map(&:task)
+  def print_list
+    @list.each do |i|
+      "#{i.task}\t - Completed: #{i.completed?}"
+    end
   end
 
-  def print_list
+  def show
+    puts
     puts title
     puts "-"*10
-    puts list
+    numbered_print
     puts
   end
 
@@ -45,15 +43,9 @@ class TodoList
   def numbered_print
     list.each_with_index do |i, n|
       n = n + 1
-      puts "#{n} - #{i}"
+      # puts "#{n} -\t #{i.task}\t Completed: #{i.complete}"
+      puts "#{n} -".rjust(6) + " #{i.task}\t Completed: #{i.completed?}"
     end
-  end
-
-  def fancy_print
-    puts title
-    puts "-"*10
-    numbered_print
-    puts
   end
 
 end
@@ -69,4 +61,9 @@ class Item
   def complete
     @complete = true
   end
+
+  def completed?
+    @complete
+  end
+
 end
