@@ -12,8 +12,8 @@ class TodoList
   end
   
   def add_multiple(*item)
-    item.each do |i|
-      @list << i
+    item.each do |item|
+      @list << item
     end
   end
 
@@ -26,8 +26,8 @@ class TodoList
   end
 
   def print_list
-    @list.each do |i|
-      "#{i.task}\t - Completed: #{i.completed?}"
+    @list.each do |item|
+      "#{item.task}\t - Completed: #{item.completed?}"
     end
   end
 
@@ -43,15 +43,15 @@ class TodoList
 
   def magic_list(string)
     a = string.split(", ")
-    a.each do |i|
-      @list << Item.new("#{i}")
+    a.each do |item|
+      @list << Item.new("#{item}")
     end
   end
 
   def numbered_print
-    list.each_with_index do |i, n|
-      n = n + 1
-      puts "#{n} -".rjust(10) + " #{i.task}".ljust(20) + "\t Completed: #{i.completed?}"
+    list.each_with_index do |item, number|
+      number = number + 1
+      puts "#{number} -".rjust(10) + " #{item.task}".ljust(20) + "\t Completed: #{item.completed?}"
     end
   end
 
@@ -68,8 +68,8 @@ class TodoList
   end
 
   def show_tasks(tasks)
-    tasks.each do |i|
-      puts "\t - #{i.task}"
+    tasks.each do |item|
+      puts "\t - #{item.task}"
     end
   end
 
@@ -87,8 +87,8 @@ class TodoList
   end
 
   def magic_complete(string)
-    list.select{|list| list.task == string}.each do |i|
-      i.complete
+    list.select{|list| list.task == string}.each do |item|
+      item.complete
     end
   end
 
@@ -97,8 +97,8 @@ class TodoList
   end
 
   def category_print(cat)
-    categorized(cat).each do |i|
-      puts "-".rjust(5) + " #{i.task}".ljust(20) + "\t Completed: #{i.completed?}"
+    categorized(cat).each do |item|
+      puts "-".rjust(5) + " #{item.task}".ljust(20) + "\t Completed: #{item.completed?}"
     end
   end
 
