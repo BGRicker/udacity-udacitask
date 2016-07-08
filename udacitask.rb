@@ -41,6 +41,11 @@ todo.rename_list "New To-Do"
 # Print the list
 todo.show
 
+# Show item details without a list
+cool_item = Item.new("pizza time")
+cool_item.category="food"
+puts cool_item.show
+
 
 # New Features
 # Magic List

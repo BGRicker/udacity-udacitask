@@ -16,4 +16,8 @@ class Item
     @complete
   end
 
+  def show
+   "Item: \t\t#{@task}\nCompleted: \t#{@complete}\nCategory: \t#{@category}"
+  end
+
 end
