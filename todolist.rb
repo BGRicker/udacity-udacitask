@@ -42,8 +42,8 @@ class TodoList
 
 
   def magic_list(string)
-    a = string.split(", ")
-    a.each do |item|
+    split_items = string.split(", ")
+    split_items.each do |item|
       @list << Item.new("#{item}")
     end
   end
