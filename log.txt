@@ -1,0 +1,47 @@
+commit a6e8473405b536a66202df0da7123cfb29ccb7ca
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Fri Jul 8 11:22:58 2016 -0400
+
+    categories, item class in own file
+
+commit b162d6e25b895f6ed06f19374bb18de460382466
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Wed Jul 6 23:01:06 2016 -0400
+
+    split view, magic complete
+
+commit c8f2819d368496e1ae172b4c0bdd63f422ea69cf
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Wed Jul 6 22:16:11 2016 -0400
+
+    refactor methods and output
+
+commit 5a0aff58c97a0b38c5f6421f8e08a9d76687b91b
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Wed Jul 6 19:26:43 2016 -0400
+
+    refactor, two features
+
+commit aad88552620af0f956aa821601f4c10b939d0b93
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Sun Jul 3 18:24:37 2016 -0400
+
+    output of lists and items
+
+commit 31b8c312a32b729ed12d4ed7107abaea66b21ec2
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Sun Jul 3 11:00:32 2016 -0400
+
+    TodoList methods, Items as objects
+
+commit 4573d957e716939f8ab52db69759fded8b8cc495
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Sat Jul 2 23:42:23 2016 -0400
+
+    todo list class and methods
+
+commit aae3b1dccb13a26d7e332de9efe37c5eab650641
+Author: Ben Ricker <BGRicker@gmail.com>
+Date:   Sat Jul 2 21:35:38 2016 -0400
+
+    initial commit
