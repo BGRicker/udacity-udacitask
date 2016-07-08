@@ -49,3 +49,46 @@ same is done for the incompleted tasks afterward.
 =================================================================================
 =================================================================================
 
+Feature 3: Categorical Lists
+- This lets the user set categories for their tasks and display lists based on
+those categories. Items have a default category of "default," and overriding
+that category will let them create custom lists. This code will set up a
+category full of items for pets, generate a todo list based on that category,
+then generate a todo list for the default value:
+
+test_list = TodoList.new("Awesome List")
+cat = Item.new("pet the cat")
+dog = Item.new("walk the dog")
+bird = Item.new("feed the bird")
+ferret = Item.new("watch the ferret")
+squirrel = Item.new("look at the squirrel")
+pizza = Item.new("eat all the pizza")
+
+cat.category = "pets"
+dog.category = "pets"
+bird.category = "pets"
+ferret.category = "pets"
+squirrel.category = "pets"
+
+test_list.add_multiple(cat, dog, bird, ferret, squirrel, pizza)
+test_list.category_show("pets")
+test_list.category_show("default")
+
+the output will show the two different lists:
+
+Awesome List
+category: pets
+0% completion rate
+----------
+    - pet the cat                Completed: false
+    - walk the dog               Completed: false
+    - feed the bird              Completed: false
+    - watch the ferret           Completed: false
+    - look at the squirrel       Completed: false
+
+
+Awesome List
+category: default
+0% completion rate
+----------
+    - eat all the pizza          Completed: false

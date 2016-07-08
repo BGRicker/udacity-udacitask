@@ -10,6 +10,12 @@ class TodoList
   def add_item(item)
     @list << item
   end
+  
+  def add_multiple(*item)
+    item.each do |i|
+      @list << i
+    end
+  end
 
   def rename_list(title)
     @title = title
@@ -28,10 +34,12 @@ class TodoList
   def show
     puts
     puts title
+    puts task_success
     puts "-"*10
     numbered_print
     puts
   end
+
 
   def magic_list(string)
     a = string.split(", ")
@@ -43,8 +51,7 @@ class TodoList
   def numbered_print
     list.each_with_index do |i, n|
       n = n + 1
-      # puts "#{n} -\t #{i.task}\t Completed: #{i.complete}"
-      puts "#{n} -".rjust(6) + " #{i.task}\t Completed: #{i.completed?}"
+      puts "#{n} -".rjust(10) + " #{i.task}".ljust(20) + "\t Completed: #{i.completed?}"
     end
   end
 
@@ -56,6 +63,10 @@ class TodoList
     list.select{|task| task.completed? == false }
   end
 
+  def task_success
+    "#{(completed_tasks.count / list.count.to_f * 100).to_i}% completion rate"
+  end
+
   def show_tasks(tasks)
     tasks.each do |i|
       puts "\t - #{i.task}"
@@ -64,12 +75,15 @@ class TodoList
 
   def split_view
     puts title
-    puts "-"*10
+    puts "-"*20
+    puts task_success
+    puts
     puts "Completed Tasks: #{completed_tasks.count}"
     show_tasks(completed_tasks)
     puts
     puts "Incomplete Tasks: #{incomplete_tasks.count}"
     show_tasks(incomplete_tasks)
+    puts
   end
 
   def magic_complete(string)
@@ -78,22 +92,24 @@ class TodoList
     end
   end
 
-end
-
-class Item
-  attr_reader :task, :complete
-
-  def initialize(task)
-    @task = task
-    @complete = false
+  def categorized(cat)
+    @list.select{|list| list.category == cat}.to_a
   end
 
-  def complete
-    @complete = true
+  def category_print(cat)
+    categorized(cat).each do |i|
+      puts "-".rjust(5) + " #{i.task}".ljust(20) + "\t Completed: #{i.completed?}"
+    end
   end
 
-  def completed?
-    @complete
+  def category_show(cat)
+    puts
+    puts title
+    puts "category: #{cat}"
+    puts task_success
+    puts "-"*10
+    category_print(cat)
+    puts
   end
 
 end

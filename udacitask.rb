@@ -1,4 +1,5 @@
 require_relative 'todolist.rb'
+require_relative 'item.rb'
 
 # Creates a new todo list
 todo = TodoList.new("Test to-do")
@@ -60,4 +61,24 @@ cool_list.magic_complete("go to the store")
 cool_list.magic_complete("go to the store")
 cool_list.split_view
 
+# Categorized lists
+# If you have a big todo list, you should be able to see only tweets of whatever
+# category you need
 
+test_list = TodoList.new("Awesome List")
+cat = Item.new("pet the cat")
+dog = Item.new("walk the dog")
+bird = Item.new("feed the bird")
+ferret = Item.new("watch the ferret")
+squirrel = Item.new("look at the squirrel")
+pizza = Item.new("eat all the pizza")
+
+cat.category = "pets"
+dog.category = "pets"
+bird.category = "pets"
+ferret.category = "pets"
+squirrel.category = "pets"
+
+test_list.add_multiple(cat, dog, bird, ferret, squirrel, pizza)
+test_list.category_show("pets")
+test_list.category_show("default")
